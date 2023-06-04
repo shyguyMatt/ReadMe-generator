@@ -56,19 +56,43 @@ inquirer
     .then((response) => {
         console.log('createing file');
 
-        const {Title: title} = response;
-        const {Description: desc} = response;
-        const {Installation: install} = response;
-        const {Usage: usage} = response;
-        const {License: licence} = response;
-        const {Contributing: contribute} = response;
-        const {Tests: test} = response;
-        const {UsrName: usrname} = response;
-        const {Email: email} = response;
+        const {
+            Title: title,
+            Description: desc,
+            Installation: install,
+            Usage: usage,
+            License: licence,
+            Contributing: contribute,
+            Tests: test,
+            UsrName: usrname,
+            Email: email} = response;
 
-        fs.writeFile('README.md',
-`## ${title}
-## ${desc}`,
+        fs.writeFile('GeneratedReadMe/README.md',
+`## Table of Contents
+- [Description](#description)
+- [Installation](#installation)
+- [Usage](#usage)
+- [License](#license)
+- [Contributing](#contributing)
+- [Tests](#tests)
+- [Questions](#questions)
+
+# ${title}
+## Description
+${desc}
+## Installation
+${install}
+## Usage
+${usage}
+## License
+${licence}
+## Contributing
+${contribute}
+## Tests
+${test}
+## Questions
+${usrname}
+${email}`,
         function(err) {
             if (err) throw err;
             console.log('file created!');

@@ -17,16 +17,15 @@ inquirer
             type: 'input',
             name: 'Installation',
             message: 'Enter instructions for how to install the project: '
-            // should include instructions for installation
         },
         {
             type: 'input',
             name: 'Usage',
             message: 'Enter instructions for the use of your project: '
-            // should include instructions for use
         },
         {
-            type: 'input',
+            type: 'list',
+            choices: ['MIT_License', 'GNU_Public_License_2.0', 'Apache_License_2.0', 'GNU_Public_License_3.0'],
             name: 'License',
             message: 'Please select from the list the licence you would like to use: '
             // should add a badge
@@ -35,8 +34,8 @@ inquirer
             type: 'input',
             name: 'Contributing',
             message: 'Enter instructions for how others can contribute to your project: '
-            // should add information for contributing
-        },        {
+        },        
+        {
             type: 'input',
             name: 'Tests',
             message: 'Enter the tests to be used with your project: '
@@ -47,7 +46,8 @@ inquirer
             message: 'Enter a github username where questions can be submitted: '
             // should inclue github username and a link to github
             // should also include an email address
-        },        {
+        },        
+        {
             type: 'input',
             name: 'Email',
             message: 'Enter an email where questions can be submitted: '
@@ -68,7 +68,8 @@ inquirer
             Email: email} = response;
 
         fs.writeFile('GeneratedReadMe/README.md',
-`## Table of Contents
+`[![License](https://img.shields.io/badge/License-${licence}-blue.svg)](https://opensource.org/licenses/${licence})
+## Table of Contents
 - [Description](#description)
 - [Installation](#installation)
 - [Usage](#usage)
@@ -91,8 +92,8 @@ ${contribute}
 ## Tests
 ${test}
 ## Questions
-${usrname}
-${email}`,
+[${usrname}](https://github.com/${usrname})\n
+you can reach me by email here: ${email}`,
         function(err) {
             if (err) throw err;
             console.log('file created!');

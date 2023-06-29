@@ -12,7 +12,7 @@ it needs to be able to take input from the user and put it in the correct catego
 ![Screenshot 2](./screenshots/Capture2.PNG)
 
 ## Youtube Video
-![youtube video link](https://youtu.be/arJJUadZY5k)
+[youtube video link](https://youtu.be/arJJUadZY5k)
 
 ## links
 [github repository](https://github.com/shyguyMatt/ReadMe-generator)
